@@ -15,18 +15,95 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
+    
+    @State var topDaily:String = ""
+    
+    @State private var topDate: String = "今日 " + "2022年8月3日" + " 星期" + "三"
+    @State private var topExpanded: Bool = true
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+            VStack {
+                Form{
+                    List{
+                        HStack {
+                            Text("2022年8月3日")
+                            Spacer()
+                            Text("星期三")
+                        }
+                    }
+                    
+                    Section(header:Text("置顶")){
+                        List{
+                            HStack {
+                                Text("距离" + "上班")
+                                Spacer()
+                                Text("30天")
+                            }
+                            HStack {
+                                Text("距离" + "上班")
+                                Spacer()
+                                Text("30天")
+                            }
+                        }
+                    }
+                
+                    Section(header:Text("标签")){
+                        List {
+                            // 内置分组
+                            DisclosureGroup("内置标签") {
+                                NavigationLink {
+                                    List {
+                                        HStack {
+                                            Text("距离" + "上班")
+                                            Spacer()
+                                            Text("30天")
+                                        }
+                                        HStack {
+                                            Text("距离" + "上班")
+                                            Spacer()
+                                            Text("30天")
+                                        }
+                                        #if os(iOS)
+                                            .navigationBarTitle("工作")
+                                        #endif
+                                    }
+                                } label: {
+                                    Label("工作", systemImage: "desktopcomputer")
+                                }
+                                                
+                                NavigationLink {
+                                    Text("生活")
+                                    #if os(iOS)
+                                        .navigationBarTitle("生活")
+                                    #endif
+                                } label: {
+                                    Label("生活", systemImage: "house")
+                                }
+
+                                NavigationLink {
+                                    Text("节日")
+                                    #if os(iOS)
+                                        .navigationBarTitle("节日")
+                                    #endif
+                                } label: {
+                                    Label("节日", systemImage: "umbrella")
+                                }
+                            }
+                            
+                            // 自定义分组
+                            DisclosureGroup("自定义标签") {
+                                ForEach(items) { item in
+                                    NavigationLink {
+                                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                                    } label: {
+                                        Text(item.timestamp!, formatter: itemFormatter)
+                                    }
+                                }.onDelete(perform: deleteItems)
+                            }
+                        }
                     }
                 }
-                .onDelete(perform: deleteItems)
             }
             .toolbar {
 #if os(iOS)
@@ -36,11 +113,19 @@ struct ContentView: View {
 #endif
                 ToolbarItem {
                     Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                        Label("添加自定义标签", systemImage: "plus")
                     }
                 }
             }
-            Text("Select an item")
+            .navigationTitle("Sky倒数日")
+            
+            // iPadOS与macOS的首页
+            VStack {
+                Label("日暮里" + " 2022年8月3日" + " 星期三", systemImage: "sunset").font(.title).foregroundColor(.black)
+                #if os(iOS)
+                    .navigationBarTitle("欢迎")
+                #endif
+            }
         }
     }
 
@@ -85,6 +170,6 @@ private let itemFormatter: DateFormatter = {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext).previewInterfaceOrientation(.portrait)
     }
 }
