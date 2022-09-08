@@ -1,16 +1,18 @@
 # SkyDaily for Apple
-* App Store：（正在开发，敬请期待）
-* 语言支持：中文
-
 ## 声明
 * 图片由第三方网站提供，图片内容不代表作者任何观点。  
 * 本作品由作者个人出于学习目的开发，由于成本原因，难以保证不同型号设备下的最终品质，后续尽量完善。
-* 本作品由作者个人出于学习目的开发，由于成本原因，App Store版可能与此版本存在功能差异。
+* <center><img height="40" src="https://resources.jetbrains.com/storage/products/company/brand/logos/AppCode.png" alt="AppCode logo.">&emsp;<img height="40" src="https://developer.apple.com/assets/elements/icons/xcode-12/xcode-12-96x96_2x.png" alt="XCode logo."></center>
+* [JetBrains Open Source Support](https://jb.gg/OpenSourceSupport "跳转至 JetBrains Open Source Support")
 
 ## 简介
 * 适用于 iOS、iPadOS、macOS 的倒数日软件。    
-* 基于 SwiftUI。    
-* 图标来源：Pixso 社区资源剪纸风图标  
+* 基于 SwiftUI。 
+* 语言：中文
+* 图标来源：https://pixso.cn  
+
+## 安装
+* App Store（敬请期待）
 
 ## 效果展示
 **注意：目前正在开发中，以下为开发展示**
