@@ -2,7 +2,7 @@
 ## 声明
 * 图片由第三方网站提供，图片内容不代表作者任何观点。  
 * 本作品由作者个人出于学习目的开发，由于成本原因，难以保证不同型号设备下的最终品质，后续尽量完善。
-* <center><img src="https://resources.jetbrains.com/storage/products/company/brand/logos/AppCode_icon.png" alt="AppCode logo.">&emsp;<img height="40" src="https://developer.apple.com/assets/elements/icons/xcode-12/xcode-12-96x96_2x.png" alt="XCode logo."></center>
+* <center><img height="40" src="https://resources.jetbrains.com/storage/products/company/brand/logos/AppCode_icon.png" alt="AppCode logo.">&emsp;<img height="40" src="https://developer.apple.com/assets/elements/icons/xcode-12/xcode-12-96x96_2x.png" alt="XCode logo."></center>
 * [JetBrains Open Source Support](https://jb.gg/OpenSourceSupport "跳转至 JetBrains Open Source Support")
 
 ## 简介
