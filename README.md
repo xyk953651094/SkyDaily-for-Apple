@@ -12,6 +12,7 @@
 * 图标来源：https://pixso.cn  
 
 ## 安装
+* 本作品由作者个人出于学习目的开发，由于成本原因，暂不上架Apple App Store。
 * App Store（敬请期待）
 
 ## 效果展示
@@ -22,4 +23,7 @@
 
 ### iPadOS
 ![IMG_1C6BD8080685-1](https://user-images.githubusercontent.com/28004442/183669656-1e765263-f6f6-40d3-b08d-907812e1cd0a.jpeg)
+
+### macOS
+敬请期待
 
